@@ -4,13 +4,17 @@
 
 This MCP server allows Clients to interact with Twitter, enabling posting tweets and searching Twitter.
 
+<a href="https://glama.ai/mcp/servers/dhsudtc7cd">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/dhsudtc7cd/badge" alt="Twitter Server MCP server" />
+</a>
+
 ## Quick Start
 
 1. Create a Twitter Developer account and get your API keys from [Twitter Developer Portal](https://developer.twitter.com/en/portal/dashboard)
 
 2. Add this configuration to your Claude Desktop config file:
 
-**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+**Windows**: `%APPDATA%\Claude\claude_desktop_config.json`  
 **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ```json
