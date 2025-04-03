@@ -22,13 +22,14 @@ This MCP server allows Clients to interact with Twitter, enabling posting tweets
   "mcpServers": {
     "twitter-mcp": {
       "command": "npx",
-      "args": ["-y", "@enescinar/twitter-mcp"],
-      "env": {
-        "API_KEY": "your_api_key_here",
-        "API_SECRET_KEY": "your_api_secret_key_here",
-        "ACCESS_TOKEN": "your_access_token_here",
-        "ACCESS_TOKEN_SECRET": "your_access_token_secret_here"
-      }
+      "args": ["-y", "@szdree/twitter-mcp"],
+        "env": {
+          "CLIENT_ID": "",
+          "CLIENT_SECRET": "",
+          "BEARER_TOKEN": "",
+          "ACCESS_TOKEN": "",
+          "REFRESH_TOKEN": ""
+        }
     }
   }
 }
@@ -53,6 +54,22 @@ Logs can be found at:
 - **Windows**: `%APPDATA%\Claude\logs\mcp-server-twitter.log`
 - **macOS**: `~/Library/Logs/Claude/mcp-server-twitter.log`
 
+### Common Issues
+
+#### Search Functionality Not Working
+- Make sure your `BEARER_TOKEN` is valid and correctly configured
+- Twitter API v2 searching requires elevated access for certain endpoints
+- Check log files for specific error messages
+- Keep in mind that Twitter's free tier has rate limits for search API
+
+### Environment Variables
+
+Copy the `.env.example` file to `.env` and fill in your credentials:
+```bash
+cp .env.example .env
+```
+
+Then edit the `.env` file with your Twitter API credentials.
 
 ## Development
 
@@ -60,7 +77,7 @@ If you want to contribute or run from source:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/EnesCinr/twitter-mcp.git
+git clone https://github.com/szdree/twitter-mcp.git
 cd twitter-mcp
 ```
 
