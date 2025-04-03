@@ -2,10 +2,11 @@ import { z } from 'zod';
 
 // Configuration schema with validation
 export const ConfigSchema = z.object({
-    apiKey: z.string().min(1, 'API Key is required'),
-    apiSecretKey: z.string().min(1, 'API Secret Key is required'),
-    accessToken: z.string().min(1, 'Access Token is required'),
-    accessTokenSecret: z.string().min(1, 'Access Token Secret is required')
+    client_id: z.string().min(1, 'Client ID is required'),
+    client_secret: z.string().min(1, 'Client Secret is required'),
+    bearer_token: z.string().min(1, 'Bearer Token is required'),
+    access_token: z.string().optional(),
+    refresh_token: z.string().optional()
 });
 
 export type Config = z.infer<typeof ConfigSchema>;

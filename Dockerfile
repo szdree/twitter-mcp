@@ -33,10 +33,11 @@ COPY package.json package-lock.json ./
 RUN npm install --omit=dev
 
 # Set environment variables for Twitter API
-ENV API_KEY=your_api_key_here
-ENV API_SECRET_KEY=your_api_secret_key_here
+ENV CLIENT_ID=your_client_id_here
+ENV CLIENT_SECRET=your_client_secret_here
+ENV BEARER_TOKEN=your_bearer_token_here
 ENV ACCESS_TOKEN=your_access_token_here
-ENV ACCESS_TOKEN_SECRET=your_access_token_secret_here
+ENV REFRESH_TOKEN=your_refresh_token_here
 
 # Start the server
 CMD ["node", "build/index.js"]

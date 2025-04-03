@@ -213,10 +213,11 @@ export class TwitterServer {
 dotenv.config();
 
 const config = {
-  apiKey: process.env.API_KEY!,
-  apiSecretKey: process.env.API_SECRET_KEY!,
-  accessToken: process.env.ACCESS_TOKEN!,
-  accessTokenSecret: process.env.ACCESS_TOKEN_SECRET!
+  client_id: process.env.CLIENT_ID!,
+  client_secret: process.env.CLIENT_SECRET!,
+  bearer_token: process.env.BEARER_TOKEN!,
+  access_token: process.env.ACCESS_TOKEN,
+  refresh_token: process.env.REFRESH_TOKEN
 };
 
 const server = new TwitterServer(config);

@@ -6,24 +6,26 @@ startCommand:
     # JSON Schema defining the configuration options for the MCP.
     type: object
     required:
-      - apiKey
-      - apiSecretKey
-      - accessToken
-      - accessTokenSecret
+      - client_id
+      - client_secret
+      - bearer_token
     properties:
-      apiKey:
+      client_id:
         type: string
-        description: Twitter API key.
-      apiSecretKey:
+        description: Twitter API client ID.
+      client_secret:
         type: string
-        description: Twitter API secret key.
-      accessToken:
+        description: Twitter API client secret.
+      bearer_token:
         type: string
-        description: Twitter access token.
-      accessTokenSecret:
+        description: Twitter API bearer token.
+      access_token:
         type: string
-        description: Twitter access token secret.
+        description: Twitter OAuth 2.0 access token.
+      refresh_token:
+        type: string
+        description: Twitter OAuth 2.0 refresh token.
   commandFunction:
     # A function that produces the CLI command to start the MCP on stdio.
     |-
-    config => ({command: 'node', args: ['build/index.js'], env: {API_KEY: config.apiKey, API_SECRET_KEY: config.apiSecretKey, ACCESS_TOKEN: config.accessToken, ACCESS_TOKEN_SECRET: config.accessTokenSecret}})
+    config => ({command: 'node', args: ['build/index.js'], env: {CLIENT_ID: config.client_id, CLIENT_SECRET: config.client_secret, BEARER_TOKEN: config.bearer_token, ACCESS_TOKEN: config.access_token, REFRESH_TOKEN: config.refresh_token}})

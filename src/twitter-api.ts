@@ -6,14 +6,9 @@ export class TwitterClient {
   private rateLimitMap = new Map<string, number>();
 
   constructor(config: Config) {
-    this.client = new TwitterApi({
-      appKey: config.apiKey,
-      appSecret: config.apiSecretKey,
-      accessToken: config.accessToken,
-      accessSecret: config.accessTokenSecret,
-    });
+    this.client = new TwitterApi(config.bearer_token);
 
-    console.error('Twitter API client initialized');
+    console.error('Twitter API client initialized with OAuth 2.0');
   }
 
   async postTweet(text: string): Promise<PostedTweet> {
